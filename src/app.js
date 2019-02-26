@@ -6,12 +6,17 @@ const SelectView = require('./views/select_view.js');
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
 
-  const instrumentsDataModel = new InstrumentFamilies(instrumentsData);
-  instrumentsDataModel.bindEvents();
+  // const instrumentsDataModel = new InstrumentFamilies(instrumentsData);
+  // instrumentsDataModel.bindEvents();
 
-  const selectInstrument = document.querySelector('select#animals-dropdown');
+  const selectInstrument = document.querySelector('select#instrument-families');
   const instrumentDropdown = new SelectView(selectInstrument);
   instrumentDropdown.bindEvents();
 
-  
+  const instrumentsDataSource = new InstrumentFamilies();
+  instrumentsDataSource.bindEvents();
+
+  const detailsContainer = document.querySelector('section.instrument-details');
+  const instrumentDetailsView = new ResultView(detailsContainer);
+  instrumentDetailsView.bindEvents();
 });
