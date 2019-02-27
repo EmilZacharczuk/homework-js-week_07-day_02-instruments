@@ -9,12 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // const instrumentsDataModel = new InstrumentFamilies(instrumentsData);
   // instrumentsDataModel.bindEvents();
 
+
   const selectInstrument = document.querySelector('select#instrument-families');
   const instrumentDropdown = new SelectView(selectInstrument);
   instrumentDropdown.bindEvents();
 
-  const instrumentsDataSource = new InstrumentFamilies();
-  instrumentsDataSource.bindEvents();
+  const instrumentFamilies = new InstrumentFamilies(instrumentsData);
+  instrumentFamilies.bindEvents();
 
   const detailsContainer = document.querySelector('section.instrument-details');
   const instrumentDetailsView = new ResultView(detailsContainer);

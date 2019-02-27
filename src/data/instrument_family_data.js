@@ -26,4 +26,4 @@ const instrumentFamilyData = [
   }
 ];
 
-// module.exports = instrumentFamilyData;
+module.exports = instrumentFamilyData;
